@@ -67,21 +67,64 @@
  (~> (titleless-page)
      (cc-superimpose @t{D. Ben Knoble})))
 
-;; Lead with Cantrill quote?
+(define spoiler-face
+  (scale-to-fit (face 'surprised) (t "XX\nXX")))
+
+(slide
+ #:title "Frosthaven"
+ spoiler-face
+ (para (small @t{(Minor)}) @t{ Spoilers ahead!}
+       #:align 'center)
+ spoiler-face)
+
+;; Got some pics of us playing the game (Discord): numbering is roughly reverse
+;; chronological
+(for ([f (reverse (sort (glob (build-path here "fh-play-??.*")) path<?))])
+  (slide #:title "Playing Frosthaven"
+         (~> (f) bitmap (scale-to-fit titleless-page))))
+
+(slide
+ #:title "Frosthaven Manager"
+ @item{First commit: March 2022}
+ @subitem{Now: 4k lines of Scribble, 10.5k lines of code and tests}
+ @item{First game: February 2023}
+ @item{Local web server: April 2023}
+ @subitem{Now: largest single module}
+ @item{?? Scenarios completed})
+
+;; TODO: screenshots of app, server page
 
 ;; Got to spend _some_ time showing off the various fun things FHM does. See
 ;; list of libs for inspiration. Also programmable game data.
 
-;; Dates:
-;; initial code: May 2022
-;; first game: February 2023
-;; Server: started + functional in April 2023
-;; ?? Scenarios completed
+(slide
+ #:title "Features"
+ 'alts
+ (list
+  (list
+   @item{Portable GUI app}
+   @subitem{@tt{racket/gui/easy} + @tt{raco distribute}})
+  (list
+   @item{Save & Restore}
+   @subitem{@tt{racket/serialize} + @tt{racket/fasl}})
+  (list
+   @item{Undo}
+   @subitem{Observable subscription})
+  (list
+   @item{Start a server: play by phone or tablet}
+   @subitem{@tt{web-server} + Server-sent events from observables})
+  (list
+   @item{Customize the game: make your own loot cards or monsters}
+   @subitem{@tt{#lang}, of course! Also @tt{megaparsack} and more})
+  (list
+   @item{Documentation: User manual, Programmer reference, etc.}
+   @subitem{Scribble + GitHub Pages})
+  (list
+   @item{You! We wouldn't play our game with our app without community like you.})))
 
-;; Got some pics of us playing the game (Discord): numbering is roughly reverse chronological
-;; TODO: screenshots of app, server page
+;; Community: Lead with Cantrill quote?
 
-;; Empirical Software Engineering: We don't know what we don't know.
+;; Empirical Software Engineering: What we know we don't know.
 ;; Qualitative: I know that I've enjoyed building in Racket! The complicated
 ;; stuff isn't less complicated, but it seems accessible and it's been pleasant
 ;; for my brain.
@@ -90,8 +133,10 @@
 ;; Why?
 
 ;; Building in the open
-;; Sharing knowledge back (also: emulating Alex Harsányi, sharing lessons from working on a large project)
+;; Sharing knowledge back (also: emulating Alex Harsányi, sharing lessons from
+;; working on a large project)
 ;;   - e.g., https://alex-hhh.github.io/2020/05/markdown-view.html
 ;; Responsible consumers (stewards)
 
 ;; Call for ideas: how can I return the favors?
+;; extract useful components ("GUI utils", curlique, ?)
