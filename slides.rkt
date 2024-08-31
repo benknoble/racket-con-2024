@@ -95,7 +95,7 @@
  @item{First game: February 2023}
  @item{Local web server: April 2023}
  @subitem{Now: largest single module}
- @item{?? Scenarios completed})
+ @item{Approx. 41 scenarios completed})
 
 ;; TODO: screenshots of app, server page
 
