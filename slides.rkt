@@ -83,6 +83,11 @@
   (slide #:title "Playing Frosthaven"
          (~> (f) bitmap (scale-to-fit titleless-page))))
 
+(slide #:title "Playing Frosthaven… with the Manager"
+       (~> ("fh-play-projector.jpg")
+           (build-path here _)
+           bitmap (scale-to-fit titleless-page)))
+
 (slide
  #:title "Frosthaven Manager"
  @item{First commit: March 2022}
