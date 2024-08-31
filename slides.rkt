@@ -66,3 +66,32 @@
  #:title "Frosthaven Manager: Built by the Community"
  (~> (titleless-page)
      (cc-superimpose @t{D. Ben Knoble})))
+
+;; Lead with Cantrill quote?
+
+;; Got to spend _some_ time showing off the various fun things FHM does. See
+;; list of libs for inspiration. Also programmable game data.
+
+;; Dates:
+;; initial code: May 2022
+;; first game: February 2023
+;; Server: started + functional in April 2023
+;; ?? Scenarios completed
+
+;; Got some pics of us playing the game (Discord): numbering is roughly reverse chronological
+;; TODO: screenshots of app, server page
+
+;; Empirical Software Engineering: We don't know what we don't know.
+;; Qualitative: I know that I've enjoyed building in Racket! The complicated
+;; stuff isn't less complicated, but it seems accessible and it's been pleasant
+;; for my brain.
+
+;; Also enjoyed Racket _because of the community_. Expound: what does that mean?
+;; Why?
+
+;; Building in the open
+;; Sharing knowledge back (also: emulating Alex Harsányi, sharing lessons from working on a large project)
+;;   - e.g., https://alex-hhh.github.io/2020/05/markdown-view.html
+;; Responsible consumers (stewards)
+
+;; Call for ideas: how can I return the favors?
