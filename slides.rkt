@@ -10,7 +10,9 @@
          racket/class
          pict/face
          syntax/parse/define
-         qi)
+         qi
+         net/sendurl
+         frosthaven-manager/monster-db)
 
 (define-syntax-parse-rule (screen-only e:expr)
   (let ([v e])
@@ -62,6 +64,11 @@
 
 (define 2/3column (hc-append 1/3column 1/3column))
 
+(define (linkto url)
+  (clickback
+   (hyperlinkize @t[url])
+   (thunk (send-url url))))
+
 (slide
  #:title "Frosthaven Manager: Built by the Community"
  (~> (titleless-page)
@@ -88,6 +95,8 @@
            (build-path here _)
            bitmap (scale-to-fit titleless-page)))
 
+;; TODO: screenshots of app, server page
+
 (slide
  #:title "Frosthaven Manager"
  @item{First commit: March 2022}
@@ -95,9 +104,8 @@
  @item{First game: February 2023}
  @item{Local web server: April 2023}
  @subitem{Now: largest single module}
- @item{Approx. 41 scenarios completed})
-
-;; TODO: screenshots of app, server page
+ @item{Approx. 41 scenarios completed}
+ @item{Infinite fun})
 
 ;; Got to spend _some_ time showing off the various fun things FHM does. See
 ;; list of libs for inspiration. Also programmable game data.
@@ -108,10 +116,12 @@
  (list
   (list
    @item{Portable GUI app}
-   @subitem{@tt{racket/gui/easy} + @tt{raco distribute}})
+   @subitem{@tt{racket/gui/easy} + @tt{raco distribute}}
+   @linkto{https://github.com/benknoble/frosthaven-manager/releases})
   (list
    @item{Save & Restore}
-   @subitem{@tt{racket/serialize} + @tt{racket/fasl}})
+   @subitem{@tt{racket/serialize} + @tt{racket/fasl}}
+   @subitem{Find the problem and fix it mid-game})
   (list
    @item{Undo}
    @subitem{Observable subscription})
@@ -120,7 +130,14 @@
    @subitem{@tt{web-server} + Server-sent events from observables})
   (list
    @item{Customize the game: make your own loot cards or monsters}
-   @subitem{@tt{#lang}, of course! Also @tt{megaparsack} and more})
+   @subitem{@tt{#lang}, of course! Also @tt{megaparsack} and more}
+   (~> (default-monster-db)
+       file->lines
+       (take 23)
+       (string-join "\n")
+       codeblock-pict
+       (scale-to-fit (rectangle (pict-width titleless-page)
+                                (* 2/3 (pict-height titleless-page))))))
   (list
    @item{Documentation: User manual, Programmer reference, etc.}
    @subitem{Scribble + GitHub Pages})
@@ -128,6 +145,20 @@
    @item{You! We wouldn't play our game with our app without community like you.})))
 
 ;; Community: Lead with Cantrill quote?
+
+(slide
+ #:title "Community"
+ @it{Everybody needs to get their a** handed to them intellectually}
+ @para[#:align 'right]{
+    @small{@t{—Bryan Cantrill, }}
+    @small{@linkto{https://softwaremisadventures.com/p/bryan-cantrill-oxide}}}
+ @para{In the best way possible, there is where I get my intellectual butt handed to me.})
+
+(slide
+ #:title "Community"
+ @it{We got a lot of adults that are not behaving very well right now.}
+ @para[#:align 'right]{@small{@it{idem.}}}
+ @para{Racketeers behave so well! Thanks community moderators.})
 
 ;; Empirical Software Engineering: What we know we don't know.
 ;; Qualitative: I know that I've enjoyed building in Racket! The complicated
