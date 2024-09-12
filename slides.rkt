@@ -72,7 +72,11 @@
 (slide
  #:title "Frosthaven Manager: Built by the Community"
  (~> (titleless-page)
-     (cc-superimpose @t{D. Ben Knoble})))
+     (cc-superimpose
+      (vc-append
+       gap-size
+       @t{D. Ben Knoble}
+       @small{@t{He/Him/His}}))))
 
 (define spoiler-face
   (scale-to-fit (face 'surprised) (t "XX\nXX")))
@@ -116,7 +120,7 @@
  (list
   (list
    @item{Portable GUI app}
-   @subitem{@tt{racket/gui/easy} + @tt{raco distribute}}
+   @subitem{@tt{racket/gui/easy} + @tt{raco distribute} + GitHub Actions}
    @linkto{https://github.com/benknoble/frosthaven-manager/releases})
   (list
    @item{Save & Restore}
@@ -140,9 +144,15 @@
                                 (* 2/3 (pict-height titleless-page))))))
   (list
    @item{Documentation: User manual, Programmer reference, etc.}
-   @subitem{Scribble + GitHub Pages})
-  (list
-   @item{You! We wouldn't play our game with our app without community like you.})))
+   @subitem{Scribble + GitHub Pages})))
+
+(slide
+ #:title "Built by the community"
+ @item{Multiple commit co-authors}
+ @item{Language Server + Vim community}
+ @subitem{Renewed interest in Vim plugins}
+ @item{Dozens of Discourse and Discord Q&As}
+ @item{You! We wouldn't play our game with our app without community like you.})
 
 ;; Community: Lead with Cantrill quote?
 
@@ -157,16 +167,25 @@
 (slide
  #:title "Community"
  @it{We got a lot of adults that are not behaving very well right now.}
- @para[#:align 'right]{@small{@it{idem.}}}
+ @para[#:align 'right]{@small{@it{—idem.}}}
  @para{Racketeers behave so well! Thanks community moderators.})
 
 ;; Empirical Software Engineering: What we know we don't know.
 ;; Qualitative: I know that I've enjoyed building in Racket! The complicated
 ;; stuff isn't less complicated, but it seems accessible and it's been pleasant
-;; for my brain.
+;; for my brain. (Back to my "old" GUI days… magic/joy of software…)
 
 ;; Also enjoyed Racket _because of the community_. Expound: what does that mean?
 ;; Why?
+
+;; What's special about community? Warning: rough draft of some ideas incoming.
+
+;; Democratization
+;; Education: Racket's educational roots (I'll let the Profs in the room tell
+;; you more about the challenges there): but we know there are challenges bring
+;; people into the elite fold of technologists. Racket has a head start on
+;; tackling those, in my opinion: how do we do more? Put people in control of
+;; their digital life.
 
 ;; Building in the open
 ;; Sharing knowledge back (also: emulating Alex Harsányi, sharing lessons from
