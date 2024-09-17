@@ -78,6 +78,18 @@
        @t{D. Ben Knoble}
        @small{@t{He/Him/His}}))))
 
+(slide
+ #:title "About Ben"
+ @item{Tar Heel}
+ @item{Luddite @(small @t{more to come soon})}
+ @item{Vim, Git, shell aficionado}
+ @item{I believe that simple questions have complex answers}
+ @subitem{@linkto{https://benknoble.github.io/about/#me}}
+ 'next
+ @item{Personal capacity/Affiliation disclaimer}
+ 'next
+ @item{I do get paid to write Racket!})
+
 (define spoiler-face
   (scale-to-fit (face 'surprised) (t "XX\nXX")))
 
