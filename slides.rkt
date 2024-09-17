@@ -200,8 +200,9 @@
           server rb-find
           (fourth clients) lc-find))))
   (list
-   @item{Customize the game: make your own loot cards or monsters}
-   @subitem{@tt{#lang}, of course! Also @tt{megaparsack} and more}
+   @item{Customize the game: make your own loot cards, monsters, and AoE
+                   patterns}
+   @subitem{@tt{#lang}, of course! @tt{megaparsack}, etc.}
    (~> (default-monster-db)
        file->lines
        (take 23)
