@@ -69,6 +69,18 @@
    (hyperlinkize @t[url])
    (thunk (send-url url))))
 
+(define games
+  (for/list ([f (reverse (sort (glob (build-path here "fh-play-??.*")) path<?))])
+    (~> (f) bitmap (scale-to-fit titleless-page))))
+
+(define projector
+  (~> ("fh-play-projector.jpg")
+      (build-path here _)
+      bitmap (scale-to-fit titleless-page)))
+
+(define docs
+  (~> ("docs.png") (build-path here _) bitmap))
+
 (slide
  #:title "Frosthaven Manager: Built by the Community"
  (~> (titleless-page)
@@ -110,14 +122,10 @@
 
 ;; Got some pics of us playing the game (Discord): numbering is roughly reverse
 ;; chronological
-(for ([f (reverse (sort (glob (build-path here "fh-play-??.*")) path<?))])
-  (slide #:title "Playing Frosthaven"
-         (~> (f) bitmap (scale-to-fit titleless-page))))
+(for ([g games])
+  (slide #:title "Playing Frosthaven" g))
 
-(slide #:title "Playing Frosthaven… with the Manager"
-       (~> ("fh-play-projector.jpg")
-           (build-path here _)
-           bitmap (scale-to-fit titleless-page)))
+(slide #:title "Playing Frosthaven… with the Manager" projector)
 
 ;; TODO: screenshots of app, server page
 
@@ -214,8 +222,7 @@
    @item{Documentation: User manual, Programmer reference, etc.}
    @subitem{Scribble + GitHub Actions/Pages}
    @subitem{@linkto{https://benknoble.github.io/frosthaven-manager/}}
-   (~> ("docs.png") (build-path here _)
-       bitmap
+   (~> (docs)
        (scale-to-fit (rectangle (pict-width titleless-page)
                                 (* 2/3 (pict-height titleless-page))))))))
 
