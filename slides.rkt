@@ -143,15 +143,62 @@
    @subitem{@tt{racket/gui/easy} + @tt{raco distribute} + GitHub Actions}
    @linkto{https://github.com/benknoble/frosthaven-manager/releases})
   (list
-   @item{Save & Restore}
+   @item{Save & Load}
    @subitem{@tt{racket/serialize} + @tt{racket/fasl}}
-   @subitem{Find the problem and fix it mid-game})
+   (hc-append 10
+              (vc-append @t{Problem}
+                         (desktop-machine 1 '(plt)))
+              (arrow 20 0)
+              (let ([icon (file-icon 70 80 "green")])
+                (cc-superimpose icon (scale-to-fit @t{Save} icon)))
+              (arrow 20 0)
+              @t{Fix, compile}
+              (arrow 20 0)
+              (vc-append @t{Load}
+                         (desktop-machine 1 '(plt)))))
   (list
    @item{Undo}
    @subitem{Observable subscription})
   (list
    @item{Start a server: play by phone or tablet}
-   @subitem{@tt{web-server} + Server-sent events from observables})
+   @subitem{@tt{web-server} + Server-sent events from observables}
+   (let ([base (~> (titleless-page)
+                   (-< pict-width (~> pict-height (* 2/3)))
+                   rectangle)]
+         [server (desktop-machine 1 '(plt))]
+         [clients (map (thunk* (desktop-machine 1)) (range 4))])
+     (~> (base)
+         (cc-superimpose server)
+         (pin-over 0 0 (first clients))
+         (pin-over (- (pict-width base)
+                      (pict-width (second clients)))
+                   0
+                   (second clients))
+         (pin-over 0
+                   (- (pict-height base)
+                      (pict-height (third clients)))
+                   (third clients))
+         (pin-over (- (pict-width base)
+                      (pict-width (second clients)))
+                   (- (pict-height base)
+                      (pict-height (third clients)))
+                   (fourth clients))
+         (pin-arrows-line
+          20 _
+          server lt-find
+          (first clients) rc-find)
+         (pin-arrows-line
+          20 _
+          server rt-find
+          (second clients) lc-find)
+         (pin-arrows-line
+          20 _
+          server lb-find
+          (third clients) rc-find)
+         (pin-arrows-line
+          20 _
+          server rb-find
+          (fourth clients) lc-find))))
   (list
    @item{Customize the game: make your own loot cards or monsters}
    @subitem{@tt{#lang}, of course! Also @tt{megaparsack} and more}
@@ -164,7 +211,12 @@
                                 (* 2/3 (pict-height titleless-page))))))
   (list
    @item{Documentation: User manual, Programmer reference, etc.}
-   @subitem{Scribble + GitHub Pages})))
+   @subitem{Scribble + GitHub Actions/Pages}
+   @subitem{@linkto{https://benknoble.github.io/frosthaven-manager/}}
+   (~> ("docs.png") (build-path here _)
+       bitmap
+       (scale-to-fit (rectangle (pict-width titleless-page)
+                                (* 2/3 (pict-height titleless-page))))))))
 
 (slide
  #:title "Built by the community"
