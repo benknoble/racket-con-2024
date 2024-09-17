@@ -275,3 +275,7 @@
 
 ;; Call for ideas: how can I return the favors?
 ;; extract useful components ("GUI utils", curlique, ?)
+
+;; What's next for me?
+;; - perf, profiling
+;; - searching a large state space for good enough combinations
