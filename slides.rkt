@@ -90,6 +90,14 @@
  'next
  @item{I do get paid to write Racket!})
 
+(slide
+ #:title "About this talk"
+ @item{Based on me and my experience building a relatively large, in-use Racket
+             program}
+ @item{I'm necessarily going to skim}
+ @subitem{Let's chat after!}
+ @item{Looking forward to future community and collaboration})
+
 (define spoiler-face
   (scale-to-fit (face 'surprised) (t "XX\nXX")))
 
