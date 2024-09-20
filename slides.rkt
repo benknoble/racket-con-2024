@@ -73,6 +73,12 @@
   (for/list ([f (reverse (sort (glob (build-path here "fh-play-??.*")) path<?))])
     (~> (f) bitmap (scale-to-fit titleless-page))))
 
+(define screens
+  (for/list ([f (sort (append (glob (build-path here "fh-mobile-??.*"))
+                              (glob (build-path here "fh-desktop-??.*")))
+                      path<?)])
+    (~> (f) bitmap (scale-to-fit titleless-page))))
+
 (define projector
   (~> ("fh-play-projector.jpg")
       (build-path here _)
@@ -127,7 +133,8 @@
 
 (slide #:title "Playing Frosthaven… with the Manager" projector)
 
-;; TODO: screenshots of app, server page
+(for ([s screens])
+  (slide #:title "Using Frosthaven Manager" s))
 
 (slide
  #:title "Frosthaven Manager"
