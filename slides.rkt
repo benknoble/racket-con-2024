@@ -142,6 +142,16 @@
  @item{Approx. 41 scenarios completed}
  @item{Infinite fun})
 
+(slide
+ #:title "Why build it?"
+ 'next
+ @item{Story time: official app uncertain}
+ 'next
+ @item{Great excuse to try building a GUI}
+ 'next
+ @item{Joy of software: I enjoy Racket}
+ @subitem{Complexity not gone, but accessible})
+
 ;; Got to spend _some_ time showing off the various fun things FHM does. See
 ;; list of libs for inspiration. Also programmable game data.
 
@@ -252,11 +262,6 @@
  @it{We got a lot of adults that are not behaving very well right now.}
  @para[#:align 'right]{@small{@it{—idem.}}}
  @para{Racketeers behave so well! Thanks community moderators.})
-
-;; Empirical Software Engineering: What we know we don't know.
-;; Qualitative: I know that I've enjoyed building in Racket! The complicated
-;; stuff isn't less complicated, but it seems accessible and it's been pleasant
-;; for my brain. (Back to my "old" GUI days… magic/joy of software…)
 
 ;; Also enjoyed Racket _because of the community_. Expound: what does that mean?
 ;; Why?
