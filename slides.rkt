@@ -265,6 +265,11 @@
 
 ;; Also enjoyed Racket _because of the community_. Expound: what does that mean?
 ;; Why?
+(slide
+ #:title "Community"
+ @item{Earlier, I said I enjoy Racket}
+ @item{Programming @it{and} community}
+ @subitem{Working together})
 
 ;; What's special about community? Warning: rough draft of some ideas incoming.
 
