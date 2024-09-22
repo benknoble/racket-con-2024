@@ -271,7 +271,36 @@
  @item{Programming @it{and} community}
  @subitem{Working together})
 
-;; What's special about community? Warning: rough draft of some ideas incoming.
+(slide
+ #:title "What's so special about community?"
+ @para[#:align 'center]{Warning: rough draft of ideas})
+
+;; Building in the open
+;; Sharing knowledge back (also: emulating Alex Harsányi, sharing lessons from
+;; working on a large project)
+;;   - e.g., https://alex-hhh.github.io/2020/05/markdown-view.html
+;; Responsible consumers (stewards)
+(slide
+ #:title "Building in the open"
+ @item{Sharing knowledge}
+ @subitem{Alex Harsányi: lessons from large projects}
+ @subitem{@small{@linkto{https://alex-hhh.github.io/2020/05/markdown-view.html}}}
+ @subitem{Discord, Discourse}
+ @subitem{I have so many examples to link to now!})
+
+(slide
+ #:title "Responsible consumers"
+ @item{Stewards of open source software}
+ @subitem{For example: Qi, Abe})
+
+;; Call for ideas: how can I return the favors?
+;; extract useful components ("GUI utils", curlique, ?)
+(slide
+ #:title "Call for ideas: how can I return the favors?"
+ @item{Plans: Extract useful components of FHM}
+ @subitem{GUI Easy helpers, components}
+ @subitem{@tt{(require curlique)}}
+ @subitem{…?})
 
 ;; Democratization
 ;; Education: Racket's educational roots (I'll let the Profs in the room tell
@@ -279,16 +308,34 @@
 ;; people into the elite fold of technologists. Racket has a head start on
 ;; tackling those, in my opinion: how do we do more? Put people in control of
 ;; their digital life.
-
-;; Building in the open
-;; Sharing knowledge back (also: emulating Alex Harsányi, sharing lessons from
-;; working on a large project)
-;;   - e.g., https://alex-hhh.github.io/2020/05/markdown-view.html
-;; Responsible consumers (stewards)
-
-;; Call for ideas: how can I return the favors?
-;; extract useful components ("GUI utils", curlique, ?)
+(slide
+ #:title "Democratization of software"
+ @item{Community makes room for more}
+ 'next
+ @item{Challenge: how do we bring more people into the ``elite fold'' of technologists?}
+ 'next
+ @subitem{I've been thinking about the word ``magic'' lately}
+ 'next
+ @item{Racket's educational roots = head start}
+ @subitem{The academics in the room know the challenges}
+ 'next
+ @item{How do we do more to put people in control of their digital lives?})
 
 ;; What's next for me?
 ;; - perf, profiling
 ;; - searching a large state space for good enough combinations
+(slide
+ #:title "What's next?"
+ 'alts
+ (list
+  (list
+   @item{Tackling challenges in FHM}
+   @subitem{Performance issues}
+   @subitem{Profiling to identify hotspots is hard for GUI applications})
+  (list
+   @item{GUI for a particular optimization problem}
+   @subitem{Searching a large state space for ``good enough''}
+   @subitem{Visualizing assignments}
+   @subitem{Saving search state to continue later})))
+
+;; TODO conclusion?
