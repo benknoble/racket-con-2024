@@ -89,12 +89,8 @@
 
 (slide
  #:title "Frosthaven Manager: Built by the Community"
- (~> (titleless-page)
-     (cc-superimpose
-      (vc-append
-       gap-size
-       @t{D. Ben Knoble}
-       @small{@t{He/Him/His}}))))
+ @para[#:align 'center]{D. Ben Knoble}
+ @para[#:align 'center]{@small{@t{He/Him/His}}})
 
 (slide
  #:title "About Ben"
